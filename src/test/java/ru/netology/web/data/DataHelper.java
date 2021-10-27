@@ -5,7 +5,7 @@ import lombok.Value;
 public class DataHelper {
     private DataHelper() {}
 
-    @Value
+ @Value
     public static class CardsInfo {
         private String first;
         private String second;
@@ -25,9 +25,9 @@ public class DataHelper {
         return new AuthInfo("vasya", "qwerty123");
     }
 
-//    public static AuthInfo getOtherAuthInfo(AuthInfo original) {
-//        return new AuthInfo("petya", "123qwerty");
-//    }
+    public static AuthInfo getOtherAuthInfo(AuthInfo original) {
+        return new AuthInfo("petya", "123qwerty");
+    }
 
     @Value
     public static class VerificationCode {
