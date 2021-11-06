@@ -1,6 +1,7 @@
 package ru.netology.web.test;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.DashboardPage;
@@ -10,7 +11,7 @@ import ru.netology.web.page.ReplenishCards;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MoneyTransferTest {
+ class MoneyTransferTest {
     @BeforeEach
     public void setUpAll() {
         open("http://localhost:9999");
@@ -46,6 +47,7 @@ public class MoneyTransferTest {
         assertEquals(firstBalanceBefore - replenishSum, cards.getFirstCardBalance());
         assertEquals(secondBalanceBefore + replenishSum, cards.getSecondCardBalance());
     }
+    @Disabled
     @Test
     public void shouldGetErrorIfAmountGreaterBalance() {
         var cardsInfo = DataHelper.getCardsInfo();
